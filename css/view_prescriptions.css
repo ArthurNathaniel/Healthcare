@@ -1,0 +1,41 @@
+/* view_prescriptions.css */
+
+.prescriptions_list {
+    padding: 20px;
+}
+
+.prescriptions_list .title {
+    margin-bottom: 20px;
+}
+
+.prescriptions_list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.prescriptions_list table, .prescriptions_list th, .prescriptions_list td {
+    border: 1px solid #ddd;
+}
+
+.prescriptions_list th, .prescriptions_list td {
+    padding: 12px;
+    text-align: left;
+}
+
+.prescriptions_list th {
+    background-color: #4464D4;
+    color: #fff;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.print-prescription-button{
+  padding: 15px 45px;
+    height: 50px;
+    background-color: #4464D4;
+    color: #fff;
+    border: none;
+}

@@ -1,0 +1,85 @@
+body{
+    position: relative;
+    height: 100vh;
+    padding: 0 5%;
+}
+.navbar_all{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+ 
+    
+}
+
+.twos{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+.twos h1{
+   padding: 0 5%;
+    padding-block: 10px;
+    background-color: #4464D4;
+    border-bottom-left-radius:30px ;
+    color: #fff;
+}
+
+.details{
+    background-color: #dddddd54;
+padding: 0 10px;
+    padding-block: 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+.dwtails{
+ display: grid;
+ grid-template-columns: 1.5fr 1fr;
+ align-items: flex-end;
+    gap: 20px;
+   
+}
+.dwtails p{
+    display: flex;
+    /* gap: 20px; */
+    font-weight: 900;
+    margin-top: 10px;
+}
+.dwtails span{
+    font-weight: 400;
+    text-decoration: underline;
+}
+.lasr{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.drugs{
+    padding-block: 30px;
+}
+
+.drugs i{
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #4464D4;
+}
+
+.doctor_name{
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+}
+
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        /* For Chrome and Safari */
+        background-color: #ffffff;
+        /* Set the background color */
+    }}

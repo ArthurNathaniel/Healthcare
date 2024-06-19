@@ -1,0 +1,62 @@
+.signup_all {
+    padding: 0 20%;
+    padding-block: 70px;
+}
+
+.header, .logo{
+    margin-left: auto;
+    margin-right: auto;
+    margin-block: 10px;
+}
+
+.header{
+    position: relative;
+
+}
+
+.header span{
+    position: absolute;
+    top: 40%;
+    left: 7%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.header a{
+    color: #000;
+}
+
+.signup_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card{
+    border: 1px solid #ddd;
+    padding: 0 5%;
+    padding-block: 40px;
+    color: #838080;
+}
+
+.card img{
+    height: 100px;
+}
+
+.card h2{
+    color: #000;
+    padding-block: 10px;
+    text-decoration: underline;
+}
+
+.forms{
+    margin-top: 40px;
+}
+
+.forms a{
+    text-decoration: underline;
+    color: #5271FF;
+}

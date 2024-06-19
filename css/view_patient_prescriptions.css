@@ -1,0 +1,27 @@
+/* view_patient_prescriptions.css */
+
+.prescriptions_list {
+    padding: 20px;
+}
+
+.prescriptions_list .title {
+    margin-bottom: 20px;
+}
+
+.prescriptions_list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.prescriptions_list table, .prescriptions_list th, .prescriptions_list td {
+    border: 1px solid #ddd;
+}
+
+.prescriptions_list th, .prescriptions_list td {
+    padding: 12px;
+    text-align: left;
+}
+
+.prescriptions_list th {
+    background-color: #f2f2f2;
+}
