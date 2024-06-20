@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
 </head>
 <body>
     <div class="page_all">
-        <?php include 'sidebar.php'; ?>
+        <?php include 'sidebar.php'; ?> 
         <div class="context">
             <div class="patients_list">
                 <div class="title">
@@ -51,7 +51,7 @@ if ($result->num_rows > 0) {
                                 <tr>
                                     <td><?php echo htmlspecialchars($patient['id']); ?></td>
                                     <td><?php echo htmlspecialchars($patient['full_name']); ?></td>
-                                    <td>
+                                    <td class="action">
                                         <button onclick="openPrescriptionForm(<?php echo $patient['id']; ?>)">Write Prescription</button>
                                         <a href="view_patient_prescriptions.php?patient_id=<?php echo $patient['id']; ?>">
                                             <button>View Prescriptions</button>

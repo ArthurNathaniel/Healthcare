@@ -12,7 +12,7 @@ $patient_id = $_GET['patient_id'] ?? null;
 
 if ($patient_id) {
     // Fetch prescriptions for the patient
-    $sql = "SELECT p.prescription, p.created_at, d.full_name AS doctor_name 
+    $sql = "SELECT p.id, p.prescription, p.created_at, d.full_name AS doctor_name 
             FROM prescriptions p
             JOIN doctors d ON p.doctor_id = d.id
             WHERE p.patient_id = ?";
@@ -58,6 +58,7 @@ if ($patient_id) {
                                 <th>Doctor Name</th>
                                 <th>Prescription</th>
                                 <th>Date</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,7 +67,10 @@ if ($patient_id) {
                                     <td><?php echo htmlspecialchars($prescription['doctor_name']); ?></td>
                                     <td><?php echo htmlspecialchars($prescription['prescription']); ?></td>
                                     <td><?php echo date('m/d/Y h:i A', strtotime($prescription['created_at'])); ?></td>
-
+                                    <td>
+                                        <a href="edit_prescription.php?id=<?php echo $prescription['id']; ?>&patient_id=<?php echo $patient_id; ?>">Edit</a>
+                                        <a href="delete_prescription.php?id=<?php echo $prescription['id']; ?>&patient_id=<?php echo $patient_id; ?>" onclick="return confirm('Are you sure you want to delete this prescription?');">Delete</a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

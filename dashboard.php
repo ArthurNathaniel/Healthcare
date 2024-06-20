@@ -68,11 +68,14 @@
 
     // Define greeting based on the time of day
     if ($current_hour >= 5 && $current_hour < 12) {
-        $greeting = 'Maa chi!';
+        // $greeting = 'Maa chi!';
+        $greeting = 'Good morning!';
     } elseif ($current_hour >= 12 && $current_hour < 18) {
-        $greeting = 'Maa haa!';
+        // $greeting = 'Maa haa!';
+        $greeting = 'Good Afternoon!';
     } else {
-        $greeting = 'Maa jo!';
+        // $greeting = 'Maa jo!';
+        $greeting = 'Good Evening!';
     }
     ?>
 
@@ -108,27 +111,26 @@
 
                         <br>
                         <p><?php echo $greeting; ?><br>
-                        Doctor <?php echo $_SESSION['user']; ?></p>
-                        <?php endif; ?>
+                            Doctor <?php echo $_SESSION['user']; ?></p>
+                    <?php endif; ?>
                     <?php if ($_SESSION['role'] === 'patient') : ?>
                         <img src="<?php echo htmlspecialchars($profile_image); ?>" alt="Profile Image" class="profile-image">
                         <br>
                         <p><?php echo $greeting; ?> <br>
-                         Mr/Mrs. <?php echo $_SESSION['user']; ?></p>
-                        <?php endif; ?>
+                            Mr/Mrs. <?php echo $_SESSION['user']; ?></p>
+                    <?php endif; ?>
                     <br>
                 </div>
-               
+
             </div>
 
-            <div class="calendar_grid">
-        
-            </div>
+            <?php include 'blog.php' ?>
+            <?php include 'health_video_talk.php' ?>
+            <?php include 'audio_podcast.php' ?>
 
         </div>
     </div>
-   
+    <script src="./js/swiper.js"></script>
 </body>
 
 </html>
-

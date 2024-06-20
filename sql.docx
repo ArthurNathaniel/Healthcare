@@ -31,3 +31,29 @@ CREATE TABLE admin (
 
 -- Insert the admin user
 INSERT INTO admin (username, password) VALUES ('admin', MD5('admin'));
+
+
+
+CREATE TABLE IF NOT EXISTS `videos (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `video_url` VARCHAR(255) NOT NULL,
+    `video_title` VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE blogs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE podcasts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(255) NOT NULL,
+    audio VARCHAR(255) NOT NULL,
+    topic VARCHAR(255) NOT NULL,
+    host VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

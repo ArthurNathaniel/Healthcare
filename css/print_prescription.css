@@ -52,7 +52,7 @@ padding: 0 10px;
 }
 .dwtails span{
     font-weight: 400;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 .lasr{
     display: flex;

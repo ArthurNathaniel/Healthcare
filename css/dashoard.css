@@ -7,54 +7,56 @@
     min-height: 44px;
     width: 100%;
     padding-left: 5%;
-    border-radius: 20px ;
+    border-radius: 20px;
 }
 
-.forms{
+.forms {
     position: relative;
 }
-.forms span{
+
+.forms span {
     position: absolute;
     top: 20%;
     left: 10px;
     color: #838080;
     font-size: 20px;
-  
+
 }
 
 
-input:focus{
+input:focus {
     outline: none;
 }
 
-.top_grid{
+.top_grid {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 20px;
     margin-top: 50px;
 }
 
-.welcome{
+.welcome {
     /* border: 2px dashed salmon; */
     padding: 0 5%;
     padding-block: 30px;
     background-color: #4464D4;
-color: #fff;   
-border-radius: 30px;
+    color: #fff;
+    border-radius: 30px;
 }
 
-.welcome h4{
+.welcome h4 {
     font-size: 30px;
 }
-.welcome p{
+
+.welcome p {
     margin-top: 20px;
 }
 
-.welcome_btn{
+.welcome_btn {
     margin-top: 30px;
 }
 
-.welcome_btn button{
+.welcome_btn button {
     padding: 15px 45px;
     border: none;
     background-color: #000;
@@ -65,12 +67,12 @@ border-radius: 30px;
     gap: 20px;
 }
 
-.welcome_btn button i{
+.welcome_btn button i {
     font-size: 30px;
-   
+
 }
 
-.profile_dashboard{
+.profile_dashboard {
     background-color: #fff;
     height: 100%;
     display: flex;
@@ -82,12 +84,15 @@ border-radius: 30px;
     border-radius: 15px;
 }
 
-.profile_dashboard img{
+.profile_dashboard img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
-   border: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
-.profile_dashboard p{
+
+.profile_dashboard p {
     text-align: center;
 }
+
+
