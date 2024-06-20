@@ -103,7 +103,9 @@
                 </div>
                 <div class="profile_dashboard">
                     <?php if ($_SESSION['role'] === 'doctor') : ?>
-                        <img src="<?php echo $doctor['profile_image']; ?>" alt="Profile Image">
+                        <!-- <img src="<?php echo $doctor['profile_image']; ?>" alt="Profile Image"> -->
+                        <img src="<?php echo htmlspecialchars($profile_image); ?>" alt="Profile Image" class="profile-image">
+
                         <br>
                         <p><?php echo $greeting; ?><br>
                         Doctor <?php echo $_SESSION['user']; ?></p>
