@@ -2,12 +2,15 @@
 include 'db.php';
 session_start();
 
-if (!isset($_SESSION['patient_id'])) {
+// Redirect to login if not authenticated or not a patient
+if (!isset($_SESSION['user']) || $_SESSION['role'] !== 'patient') {
     header("Location: login.php");
     exit();
 }
 
-$patient_id = $_SESSION['patient_id'];
+// Fetch prescriptions for the current patient
+$patient_id = $_SESSION['user_id']; // Assuming 'user_id' stores patient's ID in session
+
 $error_message = '';
 
 if (isset($_POST['update'])) {

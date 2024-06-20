@@ -2,12 +2,17 @@
 include 'db.php';
 session_start();
 
-if (!isset($_SESSION['patient_id'])) {
+// Redirect to login if not authenticated or not a patient
+if (!isset($_SESSION['user']) || $_SESSION['role'] !== 'patient') {
     header("Location: login.php");
     exit();
 }
 
-$patient_id = $_SESSION['patient_id'];
+// Fetch prescriptions for the current patient
+$patient_id = $_SESSION['user_id']; // Assuming 'user_id' stores patient's ID in session
+
+
+// $patient_id = $_SESSION['patient_id'];
 $sql = "SELECT * FROM patients WHERE id='$patient_id'";
 $result = $conn->query($sql);
 $patient = $result->fetch_assoc();

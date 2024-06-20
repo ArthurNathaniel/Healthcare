@@ -7,8 +7,8 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] !== 'doctor') {
     header("Location: login.php");
     exit();
 }
-
-$doctor_id = $_SESSION['doctor_id'] ?? null;
+// $patient_id = $_SESSION['']; 
+$doctor_id = $_SESSION['user_id'] ?? null;
 $error_message = '';
 $success_message = '';
 

@@ -1,28 +1,30 @@
 /* view_prescriptions.css */
 
-.prescriptions_list {
-    padding: 20px;
-}
 
-.prescriptions_list .title {
+
+ .title {
     margin-bottom: 20px;
 }
 
-.prescriptions_list table {
+ table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.prescriptions_list table, .prescriptions_list th, .prescriptions_list td {
+ table,  th,  td {
     border: 1px solid #ddd;
 }
 
-.prescriptions_list th, .prescriptions_list td {
+#assignedTable{
+    border: 1px solid #ddd;  
+}
+
+ th,  td {
     padding: 12px;
     text-align: left;
 }
 
-.prescriptions_list th {
+ th {
     background-color: #4464D4;
     color: #fff;
 }

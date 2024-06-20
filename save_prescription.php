@@ -8,6 +8,14 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] !== 'doctor') {
     exit();
 }
 
+// Check if user_id is set in session and it is the doctor's ID
+if (!isset($_SESSION['user_id'])) {
+    echo "Error: Doctor ID not found in session.";
+    exit();
+}
+
+$doctor_id = $_SESSION['user_id']; // Get the doctor_id from the session
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $patient_id = $_POST['patient_id'];
     $prescription = $_POST['prescription'];
@@ -15,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Save the prescription to the database
     $sql = "INSERT INTO prescriptions (doctor_id, patient_id, prescription) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("iis", $_SESSION['doctor_id'], $patient_id, $prescription);
+    $stmt->bind_param("iis", $doctor_id, $patient_id, $prescription);
 
     if ($stmt->execute()) {
         $_SESSION['success_message'] = "Prescription saved successfully.";

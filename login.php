@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include 'db.php'; // Include your database connection file
 $error_message = '';
 
 if (isset($_POST['login'])) {
@@ -11,18 +11,23 @@ if (isset($_POST['login'])) {
     if ($email == 'admin@gmail.com' && $password == 'admin') {
         $_SESSION['user'] = 'admin';
         $_SESSION['role'] = 'admin'; // Set role for admin
+        $_SESSION['user_id'] = 0; // Admin doesn't have a specific ID, set a default value
         header("Location: dashboard.php");
         exit();
     } else {
         // Check for Patient
-        $sql = "SELECT * FROM patients WHERE email='$email'";
-        $result = $conn->query($sql);
+        $sql = "SELECT id, full_name, password FROM patients WHERE email=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             if (password_verify($password, $row['password'])) {
                 $_SESSION['user'] = $row['full_name'];
                 $_SESSION['role'] = 'patient'; // Set role for patient
-                $_SESSION['patient_id'] = $row['id']; // Store patient id
+                $_SESSION['user_id'] = $row['id']; // Store patient id
                 header("Location: dashboard.php");
                 exit();
             } else {
@@ -30,14 +35,18 @@ if (isset($_POST['login'])) {
             }
         } else {
             // Check for Doctor
-            $sql = "SELECT * FROM doctors WHERE email='$email'";
-            $result = $conn->query($sql);
+            $sql = "SELECT id, full_name, password FROM doctors WHERE email=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
                 if (password_verify($password, $row['password'])) {
                     $_SESSION['user'] = $row['full_name'];
                     $_SESSION['role'] = 'doctor'; // Set role for doctor
-                    $_SESSION['doctor_id'] = $row['id']; // Store doctor id
+                    $_SESSION['user_id'] = $row['id']; // Store doctor id
                     header("Location: dashboard.php");
                     exit();
                 } else {
@@ -47,14 +56,13 @@ if (isset($_POST['login'])) {
                 $error_message = "No user found with this email.";
             }
         }
+        $stmt->close(); // Close the statement
     }
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +71,6 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/login.css">
 </head>
-
 <body>
     <div class="header">
         <span><i class="fa-solid fa-arrow-left"></i> Back</span>
@@ -122,5 +129,4 @@ if (isset($_POST['login'])) {
         });
     </script>
 </body>
-
 </html>

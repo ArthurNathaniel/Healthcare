@@ -8,9 +8,23 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] !== 'doctor') {
     exit();
 }
 
-// Fetch list of patients
-$sql = "SELECT id, full_name FROM patients";
-$result = $conn->query($sql);
+// Check if user_id is set in session
+if (!isset($_SESSION['user_id'])) {
+    echo "Error: User ID not found in session.";
+    exit();
+}
+
+$doctor_id = $_SESSION['user_id']; // Get user_id from session
+
+// Fetch list of patients assigned to the logged-in doctor
+$sql = "SELECT p.id, p.full_name 
+        FROM patients p
+        JOIN patient_doctor_assignment a ON p.id = a.patient_id
+        WHERE a.doctor_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $doctor_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $patients = $result->fetch_all(MYSQLI_ASSOC);
