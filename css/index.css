@@ -1,0 +1,61 @@
+.index_all {
+    background-color: #F5F6FB;
+    padding: 0 7%;
+    height: auto;
+    padding-block: 40px;
+    position: relative;
+    overflow-y: scroll;
+}
+
+/* Custom Scrollbar Styles */
+.index_all::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.index_all::-webkit-scrollbar-track {
+    background: #fff; /* Color of the scrollbar track */
+}
+
+.index_all::-webkit-scrollbar-thumb {
+    background: #4464D4; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Rounded corners of the scrollbar handle */
+}
+
+.index_all::-webkit-scrollbar-thumb:hover {
+    background: #FF5757; /* Color of the scrollbar handle on hover */
+}
+
+
+.hero_all{
+    /* border: 2px dashed #FF5757; */
+    text-align: center;
+}
+
+.hero_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    padding-block: 40px;
+    border-radius: 40px;
+}
+
+.hero_text h1{
+font-size: 70px;
+width: 50%;
+text-align: center;
+
+}
+.hero_text p{
+    margin-top: 20px;
+}
+.hero_btns button{
+    padding: 15px 45px;
+    background-color: #66D072;
+    border: none;
+    margin-top: 30px;
+    border-radius: 40px;
+    color: #fff;
+}
+

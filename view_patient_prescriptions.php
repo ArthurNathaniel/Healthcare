@@ -58,7 +58,7 @@ if ($patient_id) {
                                 <th>Doctor Name</th>
                                 <th>Prescription</th>
                                 <th>Date</th>
-                                <th>Actions</th>
+                                <!-- <th>Actions</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -67,10 +67,10 @@ if ($patient_id) {
                                     <td><?php echo htmlspecialchars($prescription['doctor_name']); ?></td>
                                     <td><?php echo htmlspecialchars($prescription['prescription']); ?></td>
                                     <td><?php echo date('m/d/Y h:i A', strtotime($prescription['created_at'])); ?></td>
-                                    <td>
+                                    <!-- <td>
                                         <a href="edit_prescription.php?id=<?php echo $prescription['id']; ?>&patient_id=<?php echo $patient_id; ?>">Edit</a>
                                         <a href="delete_prescription.php?id=<?php echo $prescription['id']; ?>&patient_id=<?php echo $patient_id; ?>" onclick="return confirm('Are you sure you want to delete this prescription?');">Delete</a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

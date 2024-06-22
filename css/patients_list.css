@@ -93,3 +93,11 @@
 .modal-content button{
     margin-top: 30px;
 }
+
+
+.ended {
+    background-color: #f8d7da;
+}
+.active {
+    background-color: #d4edda;
+}

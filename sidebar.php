@@ -8,10 +8,11 @@
     <div class="links">
         <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
         <a href="profile_patient.php"><i class="fas fa-user"></i> Profile</a>
-        <a href=""><i class="fas fa-calendar-alt"></i> Appointment</a>
+        <a href="patient_booking.php"><i class="fas fa-calendar-alt"></i> Book a Slot </a>
         <a href="view_prescriptions.php"><i class="fas fa-prescription"></i> Prescription</a>
+        <a href="upload_report.php"><i class="fas fa-microscope"></i> Lab Report</a>
         <a href="podcast.php"><i class="fas fa-podcast"></i> Health Audio Podcast</a>
-        <a href="health_video_talk.php"><i class="fas fa-dumbbell"></i> Health Video Talk</a>
+        <a href="video.php"><i class="fas fa-dumbbell"></i> Health Video Talk</a>
         <a href="our_blog.php"><i class="fa-regular fa-newspaper"></i> Blog</a>
     </div>
 <?php endif; ?>
@@ -22,9 +23,11 @@
     <div class="links">
         <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
         <a href="profile_doctor.php"><i class="fas fa-user"></i> Profile</a>
-        <a href=""><i class="fas fa-calendar-alt"></i> Set Appointment</a>
+        <a href="doctor_availability.php"><i class="fas fa-calendar-alt"></i> Set Appointment</a>
         <a href="patients_list.php"><i class="fas fa-prescription"></i>Write Prescription</a>
-        <a href=""><i class="fas fa-folder-open"></i> Access Patient Records</a>
+        <a href="doctor_lab.php"><i class="fas fa-microscope"></i> Assign Laboratory Test</a>
+        <a href="access_patient_records.php"><i class="fas fa-folder-open"></i> Access All Patient Records</a>
+        <a href="doctor_view_reports.php">report</a>
     </div>
 <?php endif; ?>
 

@@ -89,3 +89,24 @@ CREATE TABLE appointments (
     FOREIGN KEY (patient_id) REFERENCES patients(id),
     FOREIGN KEY (doctor_availability_id) REFERENCES doctor_availability(id)
 );
+
+
+CREATE TABLE lab_prescriptions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    doctor_id INT,
+    patient_id INT,
+    test_name VARCHAR(255),
+    description TEXT,
+    prescribed_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (doctor_id) REFERENCES doctors(id),
+    FOREIGN KEY (patient_id) REFERENCES patients(id)
+);
+
+CREATE TABLE lab_reports (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_id INT,
+    report_name VARCHAR(255),
+    report_file VARCHAR(255),
+    upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (patient_id) REFERENCES patients(id)
+);
